@@ -19,7 +19,7 @@ h1 {
 #container {
   margin: 0;
   padding: 0;
-  background-image: url(/src/img/flammes.png);
+  background-image: url(/flammes.png);
   background-size: 100%;
   background-size: cover;
   background-position: bottom;
