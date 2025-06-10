@@ -17,7 +17,7 @@ function lancerJeu() {
     timer.textContent = tempsRestant;
 
     bouton.disabled = false;
-    bouton.textContent = "Clique ici !";
+    bouton.textContent = "Clique ici ";
 
     const interval = setInterval(() => {
         tempsRestant--;
