@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.html",
   "scripts": {
-    "test": "💣👻👻👻"
+    "test": "npx jest",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,10 @@
   "homepage": "https://github.com/mu93100/klikFast#readme",
   "description": "",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "jsdom": "^26.1.0"
+  },
+  "devDependencies": {
+    "jest": "^30.0.0"
   }
 }
