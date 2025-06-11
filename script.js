@@ -1,13 +1,16 @@
 let nombreDeClics = 0;
-let tempsRestant = 10; // Durée du jeu en secondes
+let tempsRestant = 10;
 let jeuActif = false;
+let interval; // Déclaration de la variable interval dans un scope global
+let jeuRéinitialisé = false;
 
 const bouton = document.getElementById('button-clicker');
 const score = document.getElementById('score');
 const timer = document.getElementById('timer');
+const resetButton = document.getElementById('reset-button');
 
 function lancerJeu() {
-    if (jeuActif) return; // Empêche de relancer
+    if (jeuActif) return;
 
     jeuActif = true;
     nombreDeClics = 0;
@@ -17,9 +20,9 @@ function lancerJeu() {
     timer.textContent = tempsRestant;
 
     bouton.disabled = false;
-    bouton.textContent = "Clique ici ";
+    bouton.textContent = "Clique ici !";
 
-    const interval = setInterval(() => {
+    interval = setInterval(() => {
         tempsRestant--;
         timer.textContent = tempsRestant;
 
@@ -32,14 +35,34 @@ function lancerJeu() {
     }, 1000);
 }
 
-// Compte les clics si le jeu est actif
-bouton.addEventListener('click', () => {
-    if (!jeuActif) {
-        lancerJeu(); // Démarre le jeu au 1er clic
-    }
+function resetGame() {
+    clearInterval(interval); // Arrêter le timer en cours
+    jeuActif = false;
+    nombreDeClics = 0;
+    tempsRestant = 10;
 
-    if (jeuActif) {
+    score.textContent = '0';
+    timer.textContent = tempsRestant;
+
+    bouton.disabled = false;
+    bouton.textContent = "Clique ici !";
+
+    jeuRéinitialisé = true;
+}
+
+// Lancer le jeu au premier clic
+bouton.addEventListener('click', () => {
+    if (jeuRéinitialisé) {
+        lancerJeu();
+        jeuRéinitialisé = false;
+    } else if (jeuActif){
         nombreDeClics++;
         score.textContent = nombreDeClics;
     }
 });
+
+// Réinitialiser le jeu
+resetButton.addEventListener('click', resetGame);
+
+
+

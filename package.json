@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "index.html",
   "scripts": {
-    "test": "npx jest",
-    "test": "jest"
+    "test": "npx jest --env=jsdom"
   },
   "repository": {
     "type": "git",
@@ -19,6 +18,7 @@
   "description": "",
   "dependencies": {
     "express": "^5.1.0",
+    "jest-environment-jsdom": "^30.0.0",
     "jsdom": "^26.1.0"
   },
   "devDependencies": {

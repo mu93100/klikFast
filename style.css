@@ -27,7 +27,7 @@ h1 {
   border-radius: 0 0 3rem 3rem;
 }
 
-#button-clicker {
+#button-clicker, #reset-button{
   background:  rgb(244, 244, 218);
   color: white;
   border: dotted 2px black; 
@@ -42,6 +42,12 @@ h1 {
   &:hover {
     scale: 1.1;
   }
+}
+#reset-button{
+  margin: 3rem 7rem 0 7rem; 
+  /* margin-top: 4rem; */
+  padding: 1.2rem;
+  width: ;
 }
 
 .flex-center {
@@ -67,11 +73,23 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 5rem;
-  font-weight: bold;
+  font-size: 7rem;
+  font-weight: bolder;
 }
 #timer {
-  color: rgb(248, 248, 234);
+  /* color: rgb(248, 248, 234); */
+  color: rgb(21, 255, 0);
+  /* text-shadow: 1px 4px 5px rgb(5, 5, 5); */
   background: none;
   border: none;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+.tempsrestant{
+  padding-bottom: 0.6rem;
+  text-align: center;
+  color: rgb(248, 248, 234);
+  font-weight: 900;
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 1px rgb(129, 49, 2);
 }
