@@ -115,10 +115,15 @@ h1 {
   body {
     padding: 2rem 1.3rem;
   }
-
+  #main{
+    padding: 1rem 0 0 0;
+  }
   h1 {
     font-size: 3rem;
     letter-spacing: 7px;
+  }
+  .catchphrase {
+    margin: 2rem 0 3rem 0;
   }
   p, .tempsrestant{
     font-size: 1rem;
@@ -129,9 +134,10 @@ h1 {
   }
 
   #reset-button{
-    margin: 2rem 2rem 0 2rem; 
+    margin: 1.8rem; 
   }
   #button-clicker, #reset-button{
     font-size: 1.2rem;
+    padding: 0.9rem;
   }
 }
