@@ -116,18 +116,17 @@ h1 {
     padding: 2rem 1.3rem;
   }
   #main{
-    padding: 1rem 0 0 0;
+    padding: 0;
   }
   h1 {
     font-size: 3rem;
     letter-spacing: 7px;
   }
   .catchphrase {
-    margin: 2rem 0 3rem 0;
+    margin: 1.5rem 0 3rem 0;
   }
-  p, .tempsrestant{
+  .catchphrase, .tempsrestant{
     font-size: 1rem;
-    color: red;
   }
   .number {
     margin: 1rem 0;
