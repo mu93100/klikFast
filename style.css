@@ -127,8 +127,14 @@ h1 {
   }
   p, .tempsrestant{
     font-size: 1rem;
+    color: red;
   }
-  
+  .number {
+    margin: 1rem 0;
+    width: auto;
+    height: 8rem;
+    font-size: 6rem;
+  }
   #timer{
     font-size: 1.5rem;
   }
