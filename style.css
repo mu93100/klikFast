@@ -80,8 +80,8 @@ h1 {
   margin: 1rem 0;
   text-align: center;
   color: white;
-  width: 10rem;
   height: 10rem;
+  width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -116,30 +116,29 @@ h1 {
     padding: 2rem 1.3rem;
   }
   #main{
-    padding: 0;
+    padding: 0.5rem 0 0 0;
+
   }
   h1 {
     font-size: 3rem;
     letter-spacing: 7px;
   }
   .catchphrase {
-    margin: 1.5rem 0 3rem 0;
+    margin: 0.1rem 0 3rem 0;
   }
   .catchphrase, .tempsrestant{
     font-size: 1rem;
   }
   .number {
-    margin: 1rem 0;
-    width: auto;
-    height: 8rem;
-    font-size: 6rem;
+    height: 7rem;
+    font-size: 6.5rem;
   }
   #timer{
     font-size: 1.5rem;
   }
 
   #reset-button{
-    margin: 1.8rem; 
+    margin: 1.5rem auto; 
   }
   #button-clicker, #reset-button{
     font-size: 1.2rem;
