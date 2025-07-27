@@ -79,13 +79,3 @@ if (typeof module !== "undefined") {
     module.exports = { lancerJeu, afficherScore, afficherTimer, resetGame };
 }
 
-  /* === pour que la page ne grossisse pas au click sur mobile  */
-// Bloque double tap zoom
-let lastTouchEnd = 0;
-document.addEventListener('touchend', function (event) {
-    let now = (new Date()).getTime();
-    if (now - lastTouchEnd <= 300) {
-    event.preventDefault();
-    }
-    lastTouchEnd = now;
-}, false);

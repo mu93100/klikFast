@@ -50,7 +50,7 @@ h1 {
   #button-clicker:focus, #reset-button:focus {
     outline: none;
   }
-  
+
 #button-clicker:hover,
 #reset-button:hover {
   transform: scale(1.1);
@@ -113,7 +113,7 @@ h1 {
 
 @media screen and (max-width: 767px) {
   body {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.3rem;
   }
 
   h1 {
