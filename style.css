@@ -1,6 +1,7 @@
 body {
   font-family: sans-serif;
   font-size: 1.5rem;
+  padding: 3rem 10rem;
 }
 
 h1 {
@@ -11,7 +12,6 @@ h1 {
 }
 
 #main{
-  margin: 2rem;
   padding: 2rem 0 0 0;
   border-radius: 3rem;
   border: dotted 2px black;
@@ -40,8 +40,17 @@ h1 {
   font-weight: bolder;
   text-shadow: 1px 4px 5px #CE5937;
   transition: all 0.3s;
+  /* === pour que la page ne grossisse pas au click sur mobile  */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  user-select: none;
 }
-
+  /* === pour que la page ne grossisse pas au click sur mobile  */
+  #button-clicker:focus, #reset-button:focus {
+    outline: none;
+  }
+  
 #button-clicker:hover,
 #reset-button:hover {
   transform: scale(1.1);
@@ -51,7 +60,6 @@ h1 {
   margin: 3rem 7rem 0 7rem; 
   /* margin-top: 4rem; */
   padding: 1.2rem;
-  width: ;
 }
 
 .flex-center {
@@ -104,7 +112,26 @@ h1 {
 
 
 @media screen and (max-width: 767px) {
+  body {
+    padding: 2rem 1.5rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+    letter-spacing: 7px;
+  }
+  p, .tempsrestant{
+    font-size: 1rem;
+  }
+  
+  #timer{
+    font-size: 1.5rem;
+  }
+
   #reset-button{
-    margin: 3rem 2rem 0 2rem; 
+    margin: 2rem 2rem 0 2rem; 
+  }
+  #button-clicker, #reset-button{
+    font-size: 1.2rem;
   }
 }

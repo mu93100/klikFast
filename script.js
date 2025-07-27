@@ -1,70 +1,3 @@
-// let nombreDeClics = 0;
-// let tempsRestant = 10;
-// let jeuActif = false;
-// let interval; // Déclaration de la variable interval dans un scope global
-// let jeuReinitialise = false;
-
-// const buttonClicker = document.getElementById('button-clicker');
-// const score = document.getElementById('score');
-// const timer = document.getElementById('timer');
-// const resetButton = document.getElementById('reset-button');
-
-// function lancerJeu() {
-//     if (jeuActif) return;
-
-//     jeuActif = true;
-//     nombreDeClics = 0;
-//     tempsRestant = 10;
-
-//     score.textContent = '0';
-//     timer.textContent = tempsRestant;
-
-//     buttonClicker.disabled = false;
-//     buttonClicker.textContent = "Clique ici !";
-
-//     interval = setInterval(() => {
-//         tempsRestant--;
-//         timer.textContent = tempsRestant;
-
-//         if (tempsRestant <= 0) {
-//             jeuActif = false;
-//             buttonClicker.disabled = true;
-//             buttonClicker.textContent = "Temps écoulé !";
-//         }
-//     }, 1000);
-// }
-
-// function resetGame() {
-//     clearInterval(interval); // Arrêter le timer en cours
-//     jeuActif = false;
-//     nombreDeClics = 0;
-//     tempsRestant = 10;
-
-//     score.textContent = '0';
-//     timer.textContent = tempsRestant;
-
-//     buttonClicker.disabled = false;
-//     buttonClicker.textContent = "Clique ici !";
-
-//     jeuReinitialise = true;
-// }
-
-// // Lancer le jeu au premier clic
-// buttonClicker.addEventListener('click', () => {
-//     if (jeuReinitialise) {
-//         lancerJeu();
-//         jeuReinitialise = false;
-//     } else if (jeuActif){
-//         nombreDeClics++;
-//         score.textContent = nombreDeClics;
-//     }
-// });
-
-// // Réinitialiser le jeu
-// resetButton.addEventListener('click', resetGame);
-
-
-
 let nombreDeClics = 0;
 let tempsRestant = 10;
 let interval = null;
@@ -75,9 +8,9 @@ const scoreDiv = document.getElementById('score');
 const timerSpan = document.getElementById('timer');
 const resetButton = document.getElementById('reset-button');
 
-// 1. Fonction pour démarrer le jeu au 1er clic
+// 1. fonction pour démarrer le jeu au 1er clic
 function lancerJeu() {
-    if (jeuActif) return; // Empêche de relancer si déjà en cours
+    if (jeuActif) return; // empêche de relancer si déjà en cours
     jeuActif = true;
     nombreDeClics = 0;
     tempsRestant = 10;
@@ -100,17 +33,17 @@ function lancerJeu() {
     }, 1000);
 }
 
-// 2. Fonction pour afficher le score
+// 2. fonction pour afficher le score
 function afficherScore() {
     scoreDiv.textContent = nombreDeClics;
 }
 
-// 3. Fonction pour afficher le timer
+// 3. fonction pour afficher le timer
 function afficherTimer() {
     timerSpan.textContent = tempsRestant;
 }
 
-// 4. Fonction pour réinitialiser le jeu
+// 4. fonction pour réinitialiser le jeu
 function resetGame() {
     clearInterval(interval);
     jeuActif = false;
@@ -122,7 +55,7 @@ function resetGame() {
     buttonClicker.textContent = "Clique ici !"; // <-- Réinitialise le texte du bouton
 }
 
-// Gestion du 1er clic pour lancer le jeu et compter les clics suivants
+// gestion du 1er clic pour lancer le jeu et compter les clics suivants
 buttonClicker.addEventListener('click', function () {
     if (!jeuActif) {
         lancerJeu();
@@ -139,8 +72,20 @@ buttonClicker.addEventListener('click', function () {
 afficherScore();
 afficherTimer();
 
+
 //PERPLEXITY rajout suite test unitaires
 
 if (typeof module !== "undefined") {
     module.exports = { lancerJeu, afficherScore, afficherTimer, resetGame };
 }
+
+  /* === pour que la page ne grossisse pas au click sur mobile  */
+// Bloque double tap zoom
+let lastTouchEnd = 0;
+document.addEventListener('touchend', function (event) {
+    let now = (new Date()).getTime();
+    if (now - lastTouchEnd <= 300) {
+    event.preventDefault();
+    }
+    lastTouchEnd = now;
+}, false);
